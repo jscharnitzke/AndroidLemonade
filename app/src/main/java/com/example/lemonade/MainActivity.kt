@@ -62,14 +62,6 @@ class MainActivity : ComponentActivity() {
 fun MainContent(modifier: Modifier = Modifier) {
     var step by remember { mutableIntStateOf(0) }
 
-    val title = when(step) {
-        0 -> stringResource(id = R.string.tree_description)
-        1 -> stringResource(id = R.string.lemon_description)
-        2 -> stringResource(id = R.string.lemonade_description)
-        3 -> stringResource(id = R.string.empty_glass_description)
-        else -> "Unknown"
-    }
-
     Column {
          Row(modifier = modifier
              .background(color = colorResource(id = R.color.lemonade))
@@ -122,7 +114,7 @@ fun Instructions(modifier: Modifier = Modifier, onClick: () -> Unit, step: Int) 
         Button(
             colors = ButtonDefaults.buttonColors(containerColor = colorResource(id = R.color.button_background)),
             modifier = modifier,
-            onClick = {  },
+            onClick = onClick,
             shape = RoundedCornerShape(percent = 15)
         ) {
             Image(
