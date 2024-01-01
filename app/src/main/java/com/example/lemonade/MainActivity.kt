@@ -153,6 +153,7 @@ fun Instructions(modifier: Modifier = Modifier, onChange: (Int) -> Unit, step: S
         }
 
         Text(
+            fontSize = 18.sp,
             modifier = modifier.padding(16.dp),
             text = step.instructions
         )
